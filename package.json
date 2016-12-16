@@ -8,6 +8,9 @@
     "start": "node server.js",
     "travis": "npm test -- --verbose -r lcov | coveralls"
   },
+  "engines": {
+    "node": ">=4"
+  },
   "keywords": [],
   "author": "Simon Bruce <simon@blacksun.cx>",
   "license": "MIT",
