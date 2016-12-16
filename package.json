@@ -4,11 +4,16 @@
   "description": "Stuff that blacksun1 says. For those who asked for them",
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/.bin/lab",
+    "test": "lab",
     "start": "node server.js",
     "travis": "npm test -- --verbose -r lcov | coveralls"
   },
   "keywords": [],
   "author": "Simon Bruce <simon@blacksun.cx>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "code": "^4.0.0",
+    "coveralls": "^2.11.15",
+    "lab": "^11.2.1"
+  }
 }
