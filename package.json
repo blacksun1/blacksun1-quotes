@@ -1,0 +1,14 @@
+{
+  "name": "blacksun1-quotes",
+  "version": "0.0.0",
+  "description": "Stuff that blacksun1 says. For those who asked for them",
+  "main": "server.js",
+  "scripts": {
+    "test": "lab",
+    "start": "node server.js",
+    "travis": "lab --verbose -r lcov | coveralls"
+  },
+  "keywords": [],
+  "author": "Simon Bruce <simon@blacksun.cx>",
+  "license": "MIT"
+}
