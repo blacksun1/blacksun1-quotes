@@ -6,5 +6,7 @@ exports = module.exports = [
     'Are you fucking kidding me?',
     'G\'day mate',
     'Awesome',
-    'It\'s all good'
+    'It\'s all good',
+    'Why would you do that?',
+    'I think what you should do is...'
 ];
