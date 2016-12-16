@@ -1,6 +1,6 @@
 {
   "name": "blacksun1-quotes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Stuff that blacksun1 says. For those who asked for them",
   "main": "server.js",
   "scripts": {
