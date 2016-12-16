@@ -5,4 +5,4 @@
 
 Stuff that blacksun1 says. For those who asked for them
 
-![Parental Advisory: Explicit Lyrics](pa.jpg)
+![Parental Advisory: Explicit Lyrics](https://raw.githubusercontent.com/blacksun1/blacksun1-quotes/master/pa.jpg)
