@@ -10,8 +10,10 @@
         "ci": "npm run build && npm run check-format && npm run test && npm run check-exports && npm run lint",
         "format": "prettier --write .",
         "lint": "tsc",
+        "local-release": "changeset version && changeset publish",
         "test": "glob -c \"node --loader ts-node/esm --test\" \"./src/**/test/*.test.ts\"",
-        "test-import-and-require": "node test-esm.mjs && node test-cjs.cjs"
+        "test-import-and-require": "node test-esm.mjs && node test-cjs.cjs",
+        "prepublishOnly": "npm run ci"
     },
     "author": "Simon Bruce <simon@blacksun.cx>",
     "homepage": "https://github.com/blacksun1/blacksun1-quotes",
@@ -34,6 +36,7 @@
     },
     "devDependencies": {
         "@arethetypeswrong/cli": "^0.15.4",
+        "@changesets/cli": "^2.27.7",
         "@types/chai": "^4.3.19",
         "chai": "^5.1.1",
         "glob": "^11.0.0",
