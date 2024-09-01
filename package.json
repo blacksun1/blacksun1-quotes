@@ -1,22 +1,52 @@
 {
-  "name": "blacksun1-quotes",
-  "version": "1.1.0",
-  "description": "Stuff that blacksun1 says. For those who asked for them",
-  "main": "server.js",
-  "scripts": {
-    "test": "lab",
-    "start": "node server.js",
-    "travis": "npm test -- --verbose -r lcov | coveralls"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "keywords": [],
-  "author": "Simon Bruce <simon@blacksun.cx>",
-  "license": "MIT",
-  "devDependencies": {
-    "code": "^4.0.0",
-    "coveralls": "^2.11.15",
-    "lab": "^11.2.1"
-  }
+    "name": "blacksun1-quotes",
+    "version": "2.0.0",
+    "description": "Stuff that blacksun1 says. For those who asked for them",
+    "keywords": [],
+    "scripts": {
+        "build": "tsup",
+        "check-format": "prettier --check .",
+        "check-exports": "attw --pack .",
+        "ci": "npm run build && npm run check-format && npm run test && npm run check-exports && npm run lint",
+        "format": "prettier --write .",
+        "lint": "tsc",
+        "local-release": "changeset version && changeset publish",
+        "test": "glob -c \"node --loader ts-node/esm --test\" \"./src/**/test/*.test.ts\"",
+        "test-import-and-require": "node test-esm.mjs && node test-cjs.cjs",
+        "prepublishOnly": "npm run ci"
+    },
+    "author": "Simon Bruce <simon@blacksun.cx>",
+    "homepage": "https://github.com/blacksun1/blacksun1-quotes",
+    "license": "MIT",
+    "files": [
+        "./dist"
+    ],
+    "main": "dist/index.cjs",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "import": "./dist/index.js",
+            "default": "./dist/index.cjs"
+        }
+    },
+    "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/blacksun1/blacksun1-quotes"
+    },
+    "devDependencies": {
+        "@arethetypeswrong/cli": "^0.15.4",
+        "@changesets/cli": "^2.27.7",
+        "@types/chai": "^4.3.19",
+        "chai": "^5.1.1",
+        "glob": "^11.0.0",
+        "prettier": "^3.3.3",
+        "ts-node": "^10.9.2",
+        "tsup": "^8.2.4",
+        "typescript": "^5.5.4"
+    },
+    "dependencies": {
+        "@hapi/code": "^9.0.3",
+        "@types/node": "^20.16.2"
+    }
 }

@@ -15,23 +15,24 @@ Add it to your package
 npm install --save blacksun1-quotes
 ```
 
-and then use from your code
+and then use from your code with Common JS
 
 ```js
 'use strict';
 
-const Quotes = require('blacksun1-quotes');
+const { quotes } = require('blacksun1-quotes');
+const randomItem = require('random-item');
 
-Quotes.forEach((quote) => console.log(quote));
+quotes.forEach((quote) => console.log(quote));
+console.log(randomItem(quotes));
 ```
 
-or like this
+or ESM
 
-```js
-'use strict';
+```typescript
+import { quotes } from 'blacksun1-quotes';
+import RandomItem from 'random-item';
 
-const Quotes = require('blacksun1-quotes');
-const RandomItem = require('random-item');
-
-console.log(RandomItem(Quotes));
+quotes.forEach((quote) => console.log(quote));
+console.log(RandomItem(quotes));
 ```
